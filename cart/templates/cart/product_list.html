@@ -1,0 +1,27 @@
+
+{%load static%}
+
+{% block content %}
+    <h1>Computer Accessories</h1>
+    <div class='row'>
+        {% for product in products %}
+            <div class='col'>
+            <div class="card" style="width: 18rem;">
+                <img src="{{product.image_url}}" class="card-img-top" alt=""{{ product.name }}" style="width: 300px; height: 200px;">
+                <div class="card-body">
+                  <h2 class="card-title">{{product.name}}</h2>
+                  <h3 class="card-subtitle mb-2 text-body-secondary">${{product.price}}</h3>
+                  <p class="card-text">Here to Provide you with the Best🤗.</p> 
+                  <a href="{% url 'add_to_cart' product.id %}">Add to Cart</a> <br></br>
+                  
+                  
+                  
+                </div>
+              </div>
+        
+            </div>
+        {%endfor%}
+    </div>
+{% endblock %}
+<br></br>
+ <a href="{% url 'view_cart' %}">View Cart</a> 

@@ -1,0 +1,35 @@
+{% comment %} {% extends "base.html" %} {% endcomment %}
+{%load static%}
+{% load cart_filters %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+
+<h1>Your Cart</h1>
+
+{% if products_in_cart %}
+    <ul>
+        {% for product in products_in_cart %}
+    <li>
+        {{ product.name }} :: ${{ product.price }} (Quantity: {{ cart|default:0|get_item:product.id }})
+        <a href="{% url 'remove_from_cart' product.id %}">Remove from Cart</a>
+    </li>
+{% endfor %}
+    </ul>
+    <p>Total:: ${{ total_price }}</p>
+{% else %}
+    <p>Your cart is empty.</p>
+{% endif %}
+
+<a href="{% url 'product_list' %}">Continue Your Shopping</a>
+
+
+
+</body>
+</html>

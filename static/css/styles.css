@@ -1,0 +1,77 @@
+/* styles.css */
+
+/* Apply a basic reset to remove default margin and padding */
+body, h1, h2, p, ul, li {
+    margin: 10;
+    padding: 10;
+    color:#1a1919;
+}
+
+/* Apply a basic styling to the body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #3cd148;
+    color: #55b120;
+    line-height: 1.6;
+}
+
+/* Container for the cart */
+.cart-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fa0dab;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the cart items */
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+}
+
+.cart-item img {
+    max-width: 80px;
+    max-height: 80px;
+    margin-right: 10px;
+}
+
+/* Style the cart total section */
+.cart-total {
+    margin-top: 20px;
+    text-align: right;
+}
+
+/* Style the checkout button */
+.checkout-btn {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    .cart-container {
+        padding: 10px;
+    }
+
+    .cart-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .cart-item img {
+        margin: 10px 0;
+    }
+
+    .checkout-btn {
+        width: 100%;
+    }
+}
